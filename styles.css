@@ -1,10 +1,10 @@
-div {border: solid red 2px;}
+
 html,
 body {
   height: 100%;
   background-color: black;
   font-family: 'Josefin Sans', sans-serif;
-  font-size: 1em;
+  font-size: 1.2em;
   color: black;
   text-align: center;
   text-shadow: 0 1px 3px rgba(0,0,0,.5);
@@ -25,10 +25,31 @@ background-position: center;
   width: 49%;
   background-color: transparent;
   margin-left: 25%
-}    
+} 
+.img-hvr {
+  position: relative;
+  overflow: hidden;}
+  .img-hvr:hover {
+    cursor: pointer;
+  }
+.hvr-7 {
+    
+      transform:scale(1);
+      -webkit-transform:scale(1);
+      transition: transform .3s linear;
+      -webkit-transition: transform .3s linear;
+    }
+.hvr-7:hover {
+      
+        transform:scale(1.1);
+        -webkit-transform:scale(1.1);
+      }
+
 .modal-dialog {
-  width:70%;
+  width:45%;
   background-color: black;
+  text-align: center;
+
 }
 .modal-body {
   background-color: black;
@@ -47,13 +68,21 @@ background-position: center;
 .inner {
   padding: 30px;
 }
+.navbar-default {
+  background-color: #222;
+  border-color: #eee;
+  font-color: #eee;
+}
 .navbar-brand {
   margin-top: 10px;
   margin-bottom: 10px;
   font-family: 'Monoton', cursive;
   font-size: 2em;
+  font-color: #eee;
+  }
+.navbar-header {
+ 
 }
-
 .navbar-nav > li {
   display: inline-block;
 }
@@ -63,7 +92,7 @@ background-position: center;
 .navbar-nav > li > a {
   padding-right: 0;
   padding-left: 0;
-  font-size: 16px;
+  font-size: 1em;
   font-weight: bold;
   color: #fff; /* IE8 proofing */
   color: rgba(255,255,255,.75);
@@ -72,14 +101,22 @@ background-position: center;
 .navbar-nav > li > a:hover,
 .navbar-nav > li > a:focus {
   background-color: transparent;
-  border-bottom-color: #a9a9a9;
-  border-bottom-color: rgba(255,255,255,.25);
+  border-bottom-color: #eee;
+  
 }
 .navbar-nav > .active > a,
 .navbar-nav > .active > a:hover,
 .navbar-nav > .active > a:focus {
-  color: #fff;
+  color: #eee;
   border-bottom-color: #fff;
+}
+.btn-default {
+  color: #333;
+  background-color: #777;
+  border-color: #eee;
+  font-color: #eee;
+  font-size: 20px;
+  vertical-align: bottom;
 }
 @media (min-width: 768px) {
   .navbar-brand {

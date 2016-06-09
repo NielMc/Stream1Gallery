@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Dynamically create galleries</title>
 	<!-- Bootstrap CSS -->
+
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -30,7 +31,7 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="#">Gallery</a>
+						<a class="navbar-brand" href="index.html">Gallery</a>
 					</div>
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse navbar-ex1-collapse">
@@ -40,7 +41,12 @@
 						</ul>
 						<form class="navbar-form navbar-left" role="search">
 							
-							<button id='get-photos' class="btn btn-default">Generate gallery</button>
+							<button id='get-photos' class="btn btn-default">
+								<strong>
+									<span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
+									Generate gallery
+								</strong>
+							</button>
 						</form>
 						<ul class="nav navbar-nav navbar-right">
 							<li><a href="#">Link</a></li>
@@ -62,9 +68,16 @@
 
 			<div id="images-container">
 				<div class='row'>
-					
+					<script id="galleryTemplate" type="text/x-jQuery-tmpl">
+						<div class="image-item col-lg-3">
+							<label class="hidden">${id}</label>
+							<a data-target="#myModal" href="https://farm${farm}.staticflickr.com/${server}/${id}_${secret}_b.jpg" class="thumbnail clearview">
+							<img class="img-hvr hvr-7" src="https://farm${farm}.staticflickr.com/${server}/${id}_${secret}_q.jpg" alt="${title}">
+							</a>
+						</div>
+					</script>
 				</div>
-			</div>
+				</div>
 
 
 			<!-- modal window -->
@@ -75,25 +88,54 @@
 			</button>
 
 			<!-- Modal -->
-			<div id="newModal" ></div>
-			<!-- end modal window -->
-		</div>
+			<div id="newModal" >
+			<div id="modalContainer">
 
-		<!-- jQuery -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-		<!-- Bootstrap JavaScript -->
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-		<script src="assets/js/ie10-viewport-bug-workaround.js"></script>
-		<script src='js/main.js'></script>
-		<script src='js/test.js'></script>
+			<script id="modalTemplate" type="text/x-jQuery-tmpl">
 
-		<script>	
-			$(document).ready(function(){
-				function editImage() {
-					var greyscale_value= $("#greyscale").val();
-					$("img").css("-webkit-filter", 'grayscale(' + greyscale_value +'%)');
-				}
+				<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+					<div class="modal-dialog" role="document">	
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>		
+								<h4 class="modal-title" id="myModalLabel">${imgLabel}</h4>	
+							</div>
+							<div class="modal-body">
+								<figure id="image-container">
+									<img id="large-image" class="img-responsive" src=" ${source} " height="35%">
+								</figure>
+								<div class="modal-footer">
+									<p>Exp: ${exposure}, fstop:  ${fstop}, Focal Length: ${FocalLength} and ISO:  ${ISO}.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+					</script>
+					</div>
+					</div>
+					<!-- end modal window -->
+
+				</div>
+
+				<!-- jQuery -->
+				<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+				<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.templates/beta1/jquery.tmpl.js"></script>
+				<!-- Bootstrap JavaScript -->
+				<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+				<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+				<script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+				<script src='js/main.js'></script>
+
+
+				<script>	
+					$(document).ready(function(){
+						function editImage() {
+							var greyscale_value= $("#greyscale").val();
+							$("img").css("-webkit-filter", 'grayscale(' + greyscale_value +'%)');
+						}
 
 
 
@@ -108,5 +150,6 @@ $('#imageEditor').click('reset', function () {
 })
 });
 </script>
+
 </body>
 </html>
