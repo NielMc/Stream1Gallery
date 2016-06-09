@@ -8,6 +8,7 @@ body {
   color: black;
   text-align: center;
   text-shadow: 0 1px 3px rgba(0,0,0,.5);
+  box-sizing: border-box;
 }
 /* Extra markup and styles for table-esque vertical and horizontal centering */
 .site-wrapper {
@@ -26,6 +27,13 @@ background-position: center;
   background-color: transparent;
   margin-left: 25%
 } 
+.col-lg-4 {
+  width: 200px;
+  height: 200px;
+  border-bottom: 5px solid white;
+  color: red;
+  flex-wrap: 
+}
 .img-hvr {
   position: relative;
   overflow: hidden;}
@@ -44,32 +52,36 @@ background-position: center;
         transform:scale(1.1);
         -webkit-transform:scale(1.1);
       }
-
+h1 {
+  color: red;
+}
 .modal-dialog {
   width:45%;
   background-color: black;
   text-align: center;
+  
+
 
 }
 .modal-body {
   background-color: black;
+  color: white;
+}
+.modal-header {
+  background-color: black;
+  color: white;
+}
+.modal-footer {
+  text-align: left;
 }
 
-/*
-.site-wrapper-inner {
-  display: table-cell;
-  vertical-align: top;
+.flickr-header  {
+  position: relative;
+  bottom: 0px
 }
-.cover-container {
-  margin-right: auto;
-  margin-left: auto;
-}
-/* Padding for spacing */
-.inner {
-  padding: 30px;
-}
+
 .navbar-default {
-  background-color: #222;
+  background-color: transparent;
   border-color: #eee;
   font-color: #eee;
 }
@@ -80,8 +92,8 @@ background-position: center;
   font-size: 2em;
   font-color: #eee;
   }
-.navbar-header {
- 
+.navbar-collapse {
+ vertical-align: middle;
 }
 .navbar-nav > li {
   display: inline-block;
@@ -107,8 +119,9 @@ background-position: center;
 .navbar-nav > .active > a,
 .navbar-nav > .active > a:hover,
 .navbar-nav > .active > a:focus {
-  color: #eee;
+  color: transparent;
   border-bottom-color: #fff;
+  border-bottom: 10px;
 }
 .btn-default {
   color: #333;
@@ -125,4 +138,12 @@ background-position: center;
   .navbar-nav {
     float: right;
   }
+  
+}
+@media (max-width: 767px) {
+  .modal-dialog {
+    margin-left: 100px;
+  }
+  
+  
 }
