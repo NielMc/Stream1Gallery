@@ -80,21 +80,3 @@ $('#images-container').on('click', '.image-item', function(event) {
 
 
 });
-function editImage() {
-    // grayscale
-    
-
-    
-
-    var greyscale_value= $("#greyscale").val();
-    $("#large-image").css("-webkit-filter", 'grayscale(' + greyscale_value+'%)');
-    //When sliders change image will be updated via editImage() function
-$("input[type=range]").change(editImage).mousemove(editImage);
-
-// Reset sliders back to their original values on press of 'reset'
-$('#imageEditor').click('reset', function () {
-    setTimeout(function() {         /* setTimeout 0 - run function instantly.*/
-        editImage();
-    },0);
-})
-};

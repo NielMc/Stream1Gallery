@@ -1,3 +1,37 @@
+ /***
+COLORPALETTE
+Site uses grayscale semantic scheme
+#222
+#333  links 
+#555
+#777  (backgrounds and brand)
+#eee (text and borders)
+***/
+/***
+Classes and id
+body
+site-wrapper
+.navbar-header
+.navbar-brand
+.navbar-form
+.text-box
+h1
+article
+h2
+.images container
+.row
+.col-lg-3
+.thumbnail
+.img-hvr
+.newModal
+.modalContainer
+.modalDialog
+.modal-header
+h4
+figure
+.large-image
+.modal-footer
+***/
 
 html,
 body {
@@ -40,6 +74,7 @@ background-position: center;
   border-top: 3px solid #eee;
   border-bottom: 3px solid #eee;
   margin-top: 5.0em;
+  margin-bottom: 5.0em;
  } 
  
  h1,h2 {
@@ -138,7 +173,7 @@ background-position: center;
   color: #eee; /* IE8 proofing */
   color: rgba(119,119,119,0.6);
   border-bottom: 2px solid transparent;
-  font-color: #eee;
+  color: #eee;
 }
 .navbar-nav > li > a:hover,
 .navbar-nav > li > a:focus {
