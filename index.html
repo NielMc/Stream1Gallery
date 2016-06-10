@@ -5,6 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Dynamically create galleries</title>
+	
 	<!-- Bootstrap CSS -->
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -18,9 +19,10 @@
 		<link href='https://fonts.googleapis.com/css?family=Monoton' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,600' rel='stylesheet' type='text/css'>
 		
+		
 	</head>
 	<body>
-		<div class="site-wrapper img-responsive">
+		<div class="site-wrapper img-responsive content">
 			<nav class="navbar navbar-default" role="navigation">
 				<div class="container-fluid">
 					<!-- Brand and toggle get grouped for better mobile display -->
@@ -54,15 +56,21 @@
 					</div><!-- /.navbar-collapse -->
 				</div>
 			</nav>
-			<h1 class="text-center">This website generates Galleries and displays exif data for photosets hosted on Flickr. Press the button to begin.</h1>
-			
+			<div class="text-box">
+			<h1 class="text-center">This website generates Galleries and displays exif data for photosets hosted on Flickr </h1>
+			<article>
+				<h2>
+					Press the <span class="glyphicon glyphicon-camera" aria-hidden="true"></span> button in the header to begin.
+				</h2>
+			</article>
+			</div>
 
 			<div id="images-container">
 				<div class='row'>
 					<script id="galleryTemplate" type="text/x-jQuery-tmpl">
 						<div class="image-item col-lg-3">
 							<label class="hidden">${id}</label>
-							<a data-target="#myModal" href="https://farm${farm}.staticflickr.com/${server}/${id}_${secret}_b.jpg" class="thumbnail clearview">
+							<a data-target="#myModal" href="https://farm${farm}.staticflickr.com/${server}/${id}_${secret}_b.jpg" class="thumbnail clearview" style="background-color: transparent;width: 49%;margin-left: 25%;">
 							<img class="img-hvr hvr-7" src="https://farm${farm}.staticflickr.com/${server}/${id}_${secret}_q.jpg" alt="${title}">
 							</a>
 						</div>

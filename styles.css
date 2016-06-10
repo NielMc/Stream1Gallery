@@ -2,10 +2,9 @@
 html,
 body {
   height: 100%;
-  background-color: black;
   font-family: 'Josefin Sans', sans-serif;
-  font-size: 1.2em;
-  color: black;
+  background-color: transparent;
+  color: #eee;
   text-align: center;
   text-shadow: 0 1px 3px rgba(0,0,0,.5);
   box-sizing: border-box;
@@ -21,18 +20,46 @@ body {
 background-image: url("img/P6072647.JPG");
 background-size: cover;
 background-position: center;
- }     
-.thumbnail {
-  width: 49%;
-  background-color: transparent;
-  margin-left: 25%
-} 
+
+
+ }    
+ .container {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+}
+.text-box {
+  padding-bottom: 50px;
+  padding-top: 2em;
+  opacity: 0.5;
+  background: rgba(119,119,119,0.6);
+  border-top: 3px solid #eee;
+  border-bottom: 3px solid #eee;
+  margin-top: 5.0em;
+ } 
+ 
+ h1,h2 {
+  color: #eee;
+  
+ }
+
+
+
 .col-lg-4 {
   width: 200px;
   height: 200px;
-  border-bottom: 5px solid white;
-  color: red;
-  flex-wrap: 
+  border-bottom: 5px solid #eee;
+  color: #eee;
+  display: inline-block;
+  text-align: left;
+  margin: 75px;
+  vertical-align: middle;
+  background: rgba(119,119,119,0.6);
+
 }
 .img-hvr {
   position: relative;
@@ -52,9 +79,7 @@ background-position: center;
         transform:scale(1.1);
         -webkit-transform:scale(1.1);
       }
-h1 {
-  color: red;
-}
+
 .modal-dialog {
   width:45%;
   background-color: black;
@@ -65,14 +90,17 @@ h1 {
 }
 .modal-body {
   background-color: black;
-  color: white;
+  color: #eee;
 }
 .modal-header {
   background-color: black;
-  color: white;
+  color: #eee;
 }
 .modal-footer {
   text-align: left;
+}
+.close {
+  color: #eee;
 }
 
 .flickr-header  {
@@ -81,16 +109,17 @@ h1 {
 }
 
 .navbar-default {
-  background-color: transparent;
+  background: transparent;
   border-color: #eee;
-  font-color: #eee;
+  color: #eee;
+  font-size: 1.2em;
 }
 .navbar-brand {
   margin-top: 10px;
   margin-bottom: 10px;
   font-family: 'Monoton', cursive;
-  font-size: 2em;
-  font-color: #eee;
+  font-size: 2.5em;
+ 
   }
 .navbar-collapse {
  vertical-align: middle;
@@ -106,9 +135,10 @@ h1 {
   padding-left: 0;
   font-size: 1em;
   font-weight: bold;
-  color: #fff; /* IE8 proofing */
-  color: rgba(255,255,255,.75);
+  color: #eee; /* IE8 proofing */
+  color: rgba(119,119,119,0.6);
   border-bottom: 2px solid transparent;
+  font-color: #eee;
 }
 .navbar-nav > li > a:hover,
 .navbar-nav > li > a:focus {
@@ -120,12 +150,12 @@ h1 {
 .navbar-nav > .active > a:hover,
 .navbar-nav > .active > a:focus {
   color: transparent;
-  border-bottom-color: #fff;
+  border-bottom-color: #eee;
   border-bottom: 10px;
 }
 .btn-default {
-  color: #333;
-  background-color: #777;
+  color: #eee;
+  background-color: rgba(119,119,119,0.6);
   border-color: #eee;
   font-color: #eee;
   font-size: 20px;
