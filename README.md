@@ -1,2 +1,5 @@
 # Stream1Gallery
-This app displays images and exif data from Flickr galleries. 
+This web based front end app displays images and exif data from Flickr galleries. 
+The interface is fully responsive utilising Bootstrap to ensure the brand and header remain at the edge of the window and the nav bar collapses on small mobile screen sizes. 
+Two complementary fonts were chosen and the button uses a glyphicon to draw attention to its purpose. The fonts are linked from google fonts and have shadowing and background 60% transparency to highlight them against the photo background. The colour palette is a grayscale semantic scheme to ensure all parts of the interface match. The background image was chosen to emphasise the purpose of the web app and is centred with css so it is responsive to device screen size. 
+The index page is laid out with HTML5 semantic tags. The gallery and modal are laid out in the html although the content is created on the fly through clicks. The thumbnail images magnify on hover and the modal background is black to ensure the large jpg image can be viewed clearly. The contact page mirrors the same layout and style as the index pages but also includes a flickr logo bar. 
