@@ -5,108 +5,130 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Dynamically create galleries</title>
+	
 	<!-- Bootstrap CSS -->
+
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-		<!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
-		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-		<![endif]-->
-		<link rel="stylesheet" type="text/css" href="styles.css">
-		<link href='https://fonts.googleapis.com/css?family=Monoton' rel='stylesheet' type='text/css'>
-		<link href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,600' rel='stylesheet' type='text/css'>
-		
-	</head>
-	<body>
-		<div class="site-wrapper img-responsive">
-			<nav class="navbar navbar-default" role="navigation">
-				<div class="container-fluid">
-					<!-- Brand and toggle get grouped for better mobile display -->
-					<div class="navbar-header">
-						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
+
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<!-- Uses fonts from google -->
+	<link href='https://fonts.googleapis.com/css?family=Monoton' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Josefin+Sans:700' rel='stylesheet' type='text/css'>
+	<link rel="shortcut icon" href='favicon/favicon.ico'>
+
+
+</head>
+<body>
+	<div class="site-wrapper img-responsive content"> <!-- div encloses all content -->
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="index.html">Gallery</a>
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse navbar-ex1-collapse">
+					<ul class="nav navbar-nav">
+						<li ><a href="contacts.html">Contacts</a></li>
+
+					</ul>
+					<form class="navbar-form navbar-left" role="search">
+
+						<button id='get-photos' class="btn btn-default"> <!-- Button to create gallery -->
+							<strong>
+								<span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
+								Generate gallery
+							</strong>
 						</button>
-						<a class="navbar-brand" href="#">Gallery</a>
-					</div>
-					<!-- Collect the nav links, forms, and other content for toggling -->
-					<div class="collapse navbar-collapse navbar-ex1-collapse">
-						<ul class="nav navbar-nav">
-							<li class="active"><a href="#">Link</a></li>
-							<li><a href="#">Link</a></li>
-						</ul>
-						<form class="navbar-form navbar-left" role="search">
-							
-							<button id='get-photos' class="btn btn-default">Generate gallery</button>
-						</form>
-						<ul class="nav navbar-nav navbar-right">
-							<li><a href="#">Link</a></li>
-							<li class="dropdown">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-								<ul class="dropdown-menu">
-									<li><a href="#">Action</a></li>
-									<li><a href="#">Another action</a></li>
-									<li><a href="#">Something else here</a></li>
-									<li><a href="#">Separated link</a></li>
-								</ul>
-							</li>
-						</ul>
-					</div><!-- /.navbar-collapse -->
-				</div>
-			</nav>
-			<h1 class="text-center">Hello World</h1>
-			
+					</form>
+					<ul class="nav navbar-nav navbar-right">
 
-			<div id="images-container">
-				<div class='row'>
-					
-				</div>
+					</ul>
+				</div><!-- /.navbar-collapse -->
 			</div>
-
-
-			<!-- modal window -->
-
-			<!-- Button trigger modal -->
-			<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-				Launch demo modal
-			</button>
-
-			<!-- Modal -->
-			<div id="newModal" ></div>
-			<!-- end modal window -->
+		</nav>
+		<div class="text-box">
+			<h1 class="text-center">This website generates Galleries and displays exif data for photosets hosted on Flickr </h1>
+			<article>
+				<h2>
+					Press the <span class="glyphicon glyphicon-camera" aria-hidden="true"></span> button in the header to begin.
+				</h2>
+			</article>
 		</div>
 
-		<!-- jQuery -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-		<!-- Bootstrap JavaScript -->
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-		<script src="assets/js/ie10-viewport-bug-workaround.js"></script>
-		<script src='js/main.js'></script>
-		<script src='js/test.js'></script>
-
-		<script>	
-			$(document).ready(function(){
-				function editImage() {
-					var greyscale_value= $("#greyscale").val();
-					$("img").css("-webkit-filter", 'grayscale(' + greyscale_value +'%)');
-				}
-
+		<div id="images-container"> <!-- framework for gallery -->
+			<div class='row'>
+				<script id="galleryTemplate" type="text/x-jQuery-tmpl"> 
+					<!-- generates content from template -->
+					<div class="image-item col-lg-3">
+						<label class="hidden">${id}</label>
+						<a data-target="#myModal" href="https://farm${farm}.staticflickr.com/${server}/${id}_${secret}_b.jpg" class="thumbnail clearview" style="background-color: transparent;width: 49%;margin-left: 25%; border: 1px solid #eee;">
+							<!-- style added here to override bootstrap formatting -->
+							<img class="img-hvr hvr-7" src="https://farm${farm}.staticflickr.com/${server}/${id}_${secret}_q.jpg" alt="${title}">
+						</a>
+					</div>
+				</script>
+			</div>
+		</div>
 
 
-//When sliders change image will be updated via editImage() function
-$("input[type=range]").change(editImage).mousemove(editImage);
+		<!-- modal window -->
 
-// Reset sliders back to their original values on press of 'reset'
-$('#imageEditor').click('reset', function () {
-	setTimeout(function() {			/* setTimeout 0 - run function instantly.*/
-		editImage();
-	},0);
-})
-});
-</script>
+
+		<!-- Modal -->
+		<div id="newModal" >
+			<div id="modalContainer">
+
+				<script id="modalTemplate" type="text/x-jQuery-tmpl">
+					<!-- generates content from template -->
+					<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+						<div class="modal-dialog" role="document">	
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>		
+									<h4 class="modal-title" id="myModalLabel">${imgLabel}</h4>	
+								</div>
+								<div class="modal-body">
+									<figure id="image-container">
+										<img id="large-image" class="img-responsive" src=" ${source} " height="35%">
+									</figure>
+									<div class="modal-footer">
+										<p>Exp: ${exposure}, fstop:  ${fstop}, Focal Length: ${FocalLength} and ISO:  ${ISO}.</p>
+									</div>
+
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</script>
+		</div>
+	</div>
+	<!-- end modal window -->
+
+</div>
+
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.tmpl.js"></script>
+<!-- Bootstrap JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+<script src='js/main.js'></script>
+
+
+
 </body>
 </html>
